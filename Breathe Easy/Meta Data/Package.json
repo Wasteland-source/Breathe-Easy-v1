@@ -1,0 +1,8 @@
+{
+“name”: “Breathe Easy”,
+“version”: “1.0.0”,
+“description”: “A bot to relax and bring positivity to it's user's”,
+“main”: “Breathe_Easy.js”,
+“author”: “Wasteland Doctrine”,
+“dependencies”: {discord.js}
+}
