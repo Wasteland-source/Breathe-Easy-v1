@@ -1,5 +1,5 @@
 //Breathe easy, A discord bot to bring relaxation and good vibes to it's users
-//https://discordapp.com/oauth2/authorize?botBE_id=626274863220523008&permissions=573627457&scope=bot
+//https://discordapp.com/oauth2/authorize?client_id=626274863220523008&permissions=573627457&scope=bot
 
 const discord = require('discord.js'),
   botBE = new discord.Client(),
