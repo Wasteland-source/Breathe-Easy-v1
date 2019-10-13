@@ -4,7 +4,8 @@ module.exports = async function(setting, tag, guild, channel) {
 
   try {
     const discord = require('discord.js'),
-      prompt = new discord.RichEmbed();
+      prompt = new discord.RichEmbed(),
+      time = new Date();
     //initialises a new block
 
     let randomNumber;
@@ -12,19 +13,19 @@ module.exports = async function(setting, tag, guild, channel) {
     switch (setting) {
       case 'campfire':
         randomNumber = Math.ceil(Math.random() * 5)
-        console.log('\x1b[32m%s\x1b[0m', `${guild}:${tag} Prompt command success ${setting}`);
+        console.log('\x1b[32m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Prompt command success ${setting}\n`);
         break;
       case 'rain':
         randomNumber = Math.ceil(Math.random() * 5) + 5
-        console.log('\x1b[32m%s\x1b[0m', `${guild}:${tag} Prompt command success ${setting}`);
+        console.log('\x1b[32m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Prompt command success ${setting}\n`);
         break;
       case 'snow':
         randomNumber = Math.ceil(Math.random() * 4) + 10
-        console.log('\x1b[32m%s\x1b[0m', `${guild}:${tag} Prompt command success ${setting}`);
+        console.log('\x1b[32m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Prompt command success ${setting}\n`);
         break;
       case 'random':
         randomNumber = Math.ceil(Math.random() * 14)
-        console.log('\x1b[32m%s\x1b[0m', `${guild}:${tag} Prompt command success ${setting}`);
+        console.log('\x1b[32m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Prompt command success ${setting}\n`);
         break;
       default:
         const promptHelpBlock = new discord.RichEmbed();
@@ -34,7 +35,7 @@ module.exports = async function(setting, tag, guild, channel) {
         promptHelpBlock.setColor(0x06b890);
         promptHelpBlock.setFooter('Breathe Easy');
         channel.send(promptHelpBlock);
-        console.log('\x1b[36m%s\x1b[0m', `${guild}:${tag} Prompt command success keywords`);
+        console.log('\x1b[36m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Prompt command success keywords\n`);
     }
     //Generates a random number based on optional inputs from the user
 
@@ -156,7 +157,7 @@ module.exports = async function(setting, tag, guild, channel) {
     //Setting the title,image,description and colour of the prompt block
   } catch {
     channel.send('*Breathe Easy is flipping through a list of prompts muttering to herself and seems to lose her place*\n\noh no! I\'ve really messed up retrieving this prompt for you. Try again and i\ll have another go at it');
-    console.log('\x1b[31m%s\x1b[0m', `${guild}:${tag} Prompt command fail`);
+    console.log('\x1b[31m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Prompt command fail\n`);
     return;
   }
 }

@@ -4,7 +4,8 @@ module.exports = async function(tag, guild, channel) {
 
   try {
     const discord = require('discord.js'),
-      help = new discord.RichEmbed();
+      help = new discord.RichEmbed(),
+      time = new Date();
     //Creating a new help block
 
     help.setColor(0x06b890);
@@ -14,11 +15,11 @@ module.exports = async function(tag, guild, channel) {
     help.addBlankField();
     help.addField('Misc', 'This is a very early build of Breathe Easy so please bare with me as i add more features and improve what is aready here. Currently Breathe Easy attempts to assist in general relaxation and anxiety however with your feedback i hope to expand the issues Breathe Easy attempts to cope with');
     channel.send(help);
-    console.log('\x1b[32m%s\x1b[0m', `${guild}:${tag} Help command success`);
+    console.log('\x1b[32m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Help command success\n`);
     return;
   } catch {
     channel.send('*Breathe Easy is carefully bringing the help block over to you when she lets out a small sneeze and drops it*\n\nI think i dropped the help block i\'m so sorry! You can always get my list of commands here instead:');
-    console.log('\x1b[31m%s\x1b[0m', `${guild}:${tag} Help command fail`);
+    console.log('\x1b[31m%s\x1b[0m', `${time}:\n${guild}:\n${tag} Help command fail\n`);
     return;
   }
 }
